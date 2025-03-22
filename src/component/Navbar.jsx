@@ -1,14 +1,16 @@
 import { Layers, User } from "lucide-react";
+import Logo from '../assets/Logo.svg'
 
 export default function Navbar() {
   return (
     <div className="flex justify-between border-b border-gray-300 items-center p-4 md:p-6 lg:p-3 lg:pl-20 lg:pr-20">
       {/* Left Side: Logo & Title */}
-      <div className="flex items-center gap-2">
-        <div className="bg-blue-500 p-2 rounded-lg">
-          <Layers className="text-white" size={24} />
+      <div className="flex items-center">
+        <div className=" p-2 rounded-lg">
+          <img src={Logo} className="p-0 m-0 border-0 bg-transparent" />
+
         </div>
-        <span className="text-lg font-semibold text-gray-700">LeaderBoard</span>
+        <span className="leaderboard-title">LeaderBoard</span>
       </div>
 
       {/* Right Side: User Icon */}

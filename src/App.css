@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+.leaderboard-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600; /* Bold style */
+  color: #374151; /* Dark Gray color (Tailwind: text-gray-700) */
+  font-size: 20px; /* Adjust size if needed */
+}
