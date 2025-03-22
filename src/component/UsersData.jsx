@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, User } from "lucide-react";
-
+import Down from '../assets/arrow_down.svg'
+import Up from '../assets/arrow_up.svg'
 const usersData = [
   { name: "Jane Smith", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
   { name: "Jennifer", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
@@ -111,35 +112,9 @@ export default function Leaderboard() {
 
           {/* Right Side: Arrow */}
           {user.up ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="green"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-5 h-5 fill-green-500"
-            >
-              <path d="M6 15l6-6 6 6" />
-            </svg>
+               <img src={Up}/>
           ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="red"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-5 h-5 fill-red-500"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
+            <img src={Down}/>
           )}
         </div>
       </div>
