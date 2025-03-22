@@ -83,11 +83,11 @@ export default function Leaderboard() {
       `}</style>
 
       {/* small screen user data */}
-      <div className="w-full mx-auto space-y-2 block sm:hidden">
+      <div className="w-full mx-auto space-y-4 block sm:hidden">
         {ranks.map((user, index) => (
-          <div key={user.id} className="bg-white  border border-gray-200 rounded-2xl flex flex-col">
+          <div key={user.id} className="bg-white  w-full border border-gray-200 rounded-2xl flex flex-col">
             {/* Top section with number, icon, and name */}
-            <div className="flex">
+            <div className="flex  ">
               {/* Numbering Box (Left Side) */}
               <span className="text-gray-700 font-semibold w-12 flex items-center justify-center bg-gray-100 border-l-4 border-gray-100 rounded-l-lg">
                 {String(user.id).padStart(2, "0")}

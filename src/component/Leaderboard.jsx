@@ -171,14 +171,14 @@ export default function Leaderboard() {
               </div>
             </div>
             <div className="flex justify-center  items-center gap-2">
-              <h3 className="mt-2 text-lg font-semibold text-gray-900">Jane Smith</h3>
+              <h3 className="mt-2 text-sm font-semibold text-gray-900">Jane Smith</h3>
               <p className="text-blue-500 font-bold text-sm">( 84 3/8 )</p>
             </div>
 
             <p className="text-gray-500 text-xs">#123456</p>
           </div>
 
-          <div className="flex w-full justify-center gap-10">
+          <div className="flex w-full justify-center gap-5">
             {players.slice(1).map((player) => (
               <div key={player.rank} className="flex flex-col items-center">
                 <div className="relative flex items-center justify-center w-20 h-20 border-5 border-white bg-gray-200 rounded-full shadow-md">
@@ -190,7 +190,7 @@ export default function Leaderboard() {
                   </div>
                 </div>
                 <div className="flex justify-center  items-center gap-2">
-                  <h3 className="text-lg font-semibold text-gray-900">{player.name}</h3>
+                  <h3 className="text-sm font-semibold text-gray-900">{player.name}</h3>
                   <p className={`text-sm ${player.color} font-bold`}>( {player.score} )</p>
                 </div>
                 <p className="text-gray-500 text-xs">#123456</p>
