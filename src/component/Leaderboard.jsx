@@ -24,7 +24,7 @@ const players = [
       <div className="flex flex-wrap justify-between items-start gap-4 sm:gap-0 sm:items-center mb-2">
         <div className="flex-1 min-w-[60%]">
           {/* Live Badge (Desktop) */}
-          <span className="hidden sm:flex items-center gap-1 px-2 py-1  text-xs font-medium text-[#2B3546] border border-[#EAECF0] rounded-full w-max ">
+          <span className="hidden sm:flex items-center gap-1 px-2 py-1  text-xs font-medium text-[#2B3546] border border-[#EAECF0]  rounded-full w-max ">
   <span className="w-2 h-2 bg-[#16C172]  rounded-full"></span> Live
 </span> 
 
@@ -33,7 +33,7 @@ const players = [
         </div>
 
         {/* Live Badge (Mobile) */}
-        <span className="sm:hidden flex items-center gap-1 mt-2 px-2 py-1 text-xs font-medium text-[#2B3546] border border-[#DDE1E6] rounded-full">
+        <span className="sm:hidden flex items-center gap-1 mt-2 px-2 py-1 text-xs font-medium text-[#2B3546] border border-[#DDE1E6]  rounded-full">
           <span className="w-2 h-2 bg-green-500 rounded-full "></span> Live
         </span>
 
@@ -181,7 +181,7 @@ const players = [
   </div>
 )}
 
-      <hr className="text-gray-300" />
+      <hr className=" mt-3 text-gray-300" />
       {modalOpen && (
   <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50">
     <div 
@@ -222,7 +222,7 @@ const players = [
         </div>
 
         <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-          Update Username
+          Add Username
         </button>
       </div>
     </div>
@@ -301,7 +301,7 @@ const players = [
             {/* SVG Badge for Each Player */}
             <img src={player.svg} alt="Verified" className="absolute -bottom-1 -right-1 w-6 h-6" />
           </div>
-          <div className="flex justify-center items-center mt-5 gap-1 ">
+          <div className="flex justify-center items-center mt-3 gap-1 ">
             <h3 className="text-sm font-semibold text-gray-900">{player.name}</h3>
             <p className={`text-sm ${player.color} font-bold`}>( {player.score} )</p>
           </div>

@@ -10,6 +10,8 @@ const usersData = [
   { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
   { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
   { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+  { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+  { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
 ];
 
 const ranks = [

@@ -50,7 +50,7 @@ const OTPInputWeb: React.FC = () => {
 
                     {/* OTP Form */}
                     <div>
-                        <h2 className="text-2xl font-semibold mb-3 text-gray-800">Enter Code</h2>
+                        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Enter Code</h2>
                         <p className="text-gray-600 text-lg mb-6">
                             Enter unique code to track measurements in real time
                         </p>
@@ -66,7 +66,7 @@ const OTPInputWeb: React.FC = () => {
                                     value={otp[index]}
                                     onChange={(e) => handleChange(index, e.target.value)}
                                     onKeyDown={(e) => handleBackspace(index, e)}
-                                    className="w-16 h-16 text-center text-blue-500 font-bold text-2xl 
+                                    className="w-14 h-13 text-center text-blue-500 font-bold text-2xl 
                                               border-2 border-blue-500 rounded-lg focus:border-blue-500 
                                               focus:outline-none max-md:h-14 max-md:w-14"
                                 />
@@ -76,7 +76,7 @@ const OTPInputWeb: React.FC = () => {
                         {/* Continue Button */}
                         <button
                             onClick={handleSubmit}
-                            className="  bg-blue-500 text-white py-3 px-4 ml-25 rounded-lg 
+                            className=" w-full bg-blue-500 text-white py-3 px-4  rounded-lg 
                                      text-lg font-semibold hover:bg-blue-700 transition-colors
                                      max-md:py-3"
                         >
