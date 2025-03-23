@@ -6,7 +6,7 @@ import UsersData from '../component/UsersData'
 
 const Home = () => {
   return (
-    <div>
+    <div >
         <Navbar/>
         <Leaderboard/>
         <UsersData/>

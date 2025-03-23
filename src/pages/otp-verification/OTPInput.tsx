@@ -33,8 +33,8 @@ const OTPInputWeb: React.FC = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gray-50 max-md:bg-white">
-            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-[400px] mx-4 max-md:shadow-none max-md:px-4">
+        <div className="flex justify-center items-start min-h-screen bg-gray-50 max-md:bg-white "> 
+       <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-[400px] mx-4 max-md:shadow-none max-md:px-4 mt-[10vh] max-md:mt-1 max-md:pl-1"> 
                 <div className="flex flex-col">
                     {/* Logo Section */}
                     <div className="flex items-center gap-3 mb-8">
@@ -50,7 +50,7 @@ const OTPInputWeb: React.FC = () => {
 
                     {/* OTP Form */}
                     <div>
-                        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Enter Code</h2>
+                        <h2 className="text-2xl font-semibold mb-4 max-md:mb-0 text-gray-800">Enter Code</h2>
                         <p className="text-gray-600 text-lg mb-6">
                             Enter unique code to track measurements in real time
                         </p>

@@ -77,7 +77,6 @@ const players = [
         <img src={Share} className="w-5 h-5 text-blue-600" alt="Compare Icon" />
           Share
         </button>
-        <hr className=" mt-4 text-gray-100" />
       </div>
 
 
@@ -222,7 +221,7 @@ const players = [
         </div>
 
         <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-          Add Username
+          Add 
         </button>
       </div>
     </div>

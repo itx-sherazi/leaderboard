@@ -3,7 +3,7 @@ import Logo from '../assets/Logo.png'
 
 export default function Navbar() {
   return (
-    <div className="flex justify-between border-b border-gray-300 items-center p-4 md:p-6 lg:p-3 lg:pl-20 lg:pr-20">
+    <div className="flex justify-between border-b  border-gray-300 items-center p-4 md:p-6 lg:p-3 lg:pl-20 lg:pr-20">
       {/* Left Side: Logo & Title */}
       <div className="flex items-center">
         <div className=" p-2 rounded-lg">
