@@ -93,7 +93,7 @@ export default function Leaderboard() {
       `}</style>
 
       {/* small screen user data */}
-      <div className="w-full mx-auto space-y-4 block sm:hidden">
+      <div className="w-full mx-auto space-y-4  mb-10 block sm:hidden">
   {ranks.map((user, index) => (
     <div
       key={user.id}
