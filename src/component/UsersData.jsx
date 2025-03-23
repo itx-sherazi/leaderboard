@@ -10,8 +10,6 @@ const usersData = [
   { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
   { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
   { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-  { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-  { name: "Your current rank", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
 ];
 
 const ranks = [
@@ -31,11 +29,11 @@ export default function Leaderboard() {
 
   return (
     <div className="w-full pl-4 pr-4">
-  <div className="h-[calc(100vh-180px)] overflow-y-auto ml-14 mr-14 pr-2 space-y-4  custom-scrollbar hidden sm:block">
+ <div className="h-[calc(100vh-160px)] overflow-y-auto ml-14 mr-14 pr-2 space-y-2 custom-scrollbar hidden sm:block">
   {usersData.map((user, index) => (
-    <div key={index} className={`bg-white border border-gray-200 rounded-2xl flex flex-col ${activeIndex === index ? "!border-blue-500 border-1" : ""}`}>
-      {/* Top section */}
-      <div className="flex">
+    <div key={index} className="bg-white rounded-2xl flex flex-col">
+      {/* Top section with border */}
+      <div className={`flex border border-gray-200 rounded-2xl ${activeIndex === index ? "!border-blue-500 border-1" : ""}`}>
         <span className="text-gray-700 font-semibold w-12 flex items-center justify-center bg-gray-100 border-l-4 border-gray-100 rounded-l-2xl">
           {String(index + 1).padStart(2, "0")}
         </span>
@@ -126,5 +124,4 @@ export default function Leaderboard() {
     </div>
   );
 }
-
 

@@ -11,6 +11,7 @@ import Verify1 from '../assets/Verified1.svg'
 export default function Leaderboard() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSortOpen, setIsSortOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
  
 const players = [
   { name: "Jane Smith", score: "84 3/8", rank: 1, color: "text-blue-500", svg: Verify1 },
@@ -23,7 +24,7 @@ const players = [
       <div className="flex flex-wrap justify-between items-start gap-4 sm:gap-0 sm:items-center mb-2">
         <div className="flex-1 min-w-[60%]">
           {/* Live Badge (Desktop) */}
-          <span className="hidden sm:flex items-center gap-1 px-2 py-1 text-xs font-medium text-[#2B3546] border border-[#DDE1E6] rounded-full w-max mb-1">
+          <span className="hidden sm:flex items-center gap-1 px-2 py-1  text-xs font-medium text-[#2B3546] border border-gray-100 rounded-full w-max ">
   <span className="w-2 h-2 bg-[#16C172] rounded-full"></span> Live
 </span> 
 
@@ -32,26 +33,26 @@ const players = [
         </div>
 
         {/* Live Badge (Mobile) */}
-        <span className="sm:hidden flex items-center gap-1 px-2 py-1 text-xs font-medium text-[#2B3546] border border-[#DDE1E6] rounded-full">
+        <span className="sm:hidden flex items-center gap-1 mt-2 px-2 py-1 text-xs font-medium text-[#2B3546] border border-[#DDE1E6] rounded-full">
           <span className="w-2 h-2 bg-green-500 rounded-full "></span> Live
         </span>
 
         {/* Desktop Buttons */}
         <div className="hidden sm:flex gap-2 mt-10">
   {/* Compare Button */}
-  <button className="flex items-center gap-1 px-4 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
+  <button       onClick={() => setModalOpen(true)}  className="flex items-center gap-1 px-6 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
     <img src={Icon} className="w-5 h-5 text-blue-600" alt="Compare Icon" />
     Compare
   </button>
 
   {/* Sort Button */}
-  <button className="flex items-center gap-1 px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
+  <button     onClick={() => setModalOpen(true)} className="flex items-center gap-1 px-6 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
     <img src={Filters} className="w-5 h-4 text-blue-600" alt="Sort Icon" />
     Sort
   </button>
 
   {/* Share Button */}
-  <button className="flex items-center gap-1 px-4 py-2
+  <button className="flex items-center gap-1 px-6 py-2
  text-white bg-blue-600 rounded-lg hover:bg-blue-700">
     <img src={Share} className="w-5 h-4 text-white" alt="Share Icon" />
     Share   
@@ -63,20 +64,20 @@ const players = [
       {/* Mobile Buttons */}
       <div className="w-full sm:hidden flex flex-col pt-3  ">
         <div className="flex gap-5 mb-4 w-full">
-          <button onClick={() => setIsOpen(true)} className="w-1/2 flex items-center justify-center gap-1 px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
+          <button onClick={() => setIsOpen(true)} className="w-1/2 flex items-center justify-center gap-2 px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
           <img src={Icon} className="w-5 h-5 text-blue-600" alt="Compare Icon" />
             Compare
           </button>
-          <button onClick={() => setIsSortOpen(true)} className="w-1/2 flex items-center justify-center gap-1 px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
+          <button onClick={() => setIsSortOpen(true)} className="w-1/2 flex items-center justify-center gap-2 px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
           <img src={Filters} className="w-5 h-5 text-blue-600" alt="Compare Icon" />
             Sort
           </button>
         </div>
-        <button className="w-full flex items-center justify-center gap-1 px-4 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+        <button className="w-full flex items-center justify-center gap-2 px-4 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700">
         <img src={Share} className="w-5 h-5 text-blue-600" alt="Compare Icon" />
           Share
         </button>
-        <hr className=" mt-4 text-gray-300" />
+        <hr className=" mt-4 text-gray-100" />
       </div>
 
 
@@ -181,6 +182,23 @@ const players = [
 )}
 
       <hr className="text-gray-300" />
+      {modalOpen && (
+        <div className="fixed inset-0 bg-gray-200 bg-opacity-50 flex items-center justify-center">
+          <div className="w-[500px] h-[500px] bg-white rounded-xl shadow-xl p-6 flex flex-col">
+            {/* Title Close Button */}
+            <div className="flex justify-end">
+              <button
+                className="bg-transparent border-none text-2xl cursor-pointer hover:text-gray-600"
+                onClick={() => setModalOpen(false)}
+              >
+                X
+              </button>
+            </div>
+
+      
+          </div>
+        </div>
+      )}
 
       {/* tweak score user */}
 
@@ -193,7 +211,7 @@ const players = [
         {/* SVG Badge */}
         <img src={Verify1} alt="Verified" className="absolute -bottom-1 -right-1 w-6 h-6" />
       </div>
-      <div className="flex justify-center items-center gap-2">
+      <div className="flex justify-center items-center gap-2 mt-2">
         <h3 className="mt-2 text-sm font-semibold text-gray-900">Jane Smith</h3>
         <p className="text-blue-500 font-bold text-sm">( 84 3/8 )</p>
       </div>
@@ -208,7 +226,7 @@ const players = [
             {/* SVG Badge for Each Player */}
             <img src={player.svg} alt="Verified" className="absolute -bottom-1 -right-1 w-6 h-6" />
           </div>
-          <div className="flex justify-center items-center mt-2 gap-1">
+          <div className="flex justify-center items-center mt-3 gap-1 ">
             <h3 className="text-sm font-semibold text-gray-900">{player.name}</h3>
             <p className={`text-sm ${player.color} font-bold`}>( {player.score} )</p>
           </div>
