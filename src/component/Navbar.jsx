@@ -1,5 +1,5 @@
 import { Layers, User } from "lucide-react";
-import Logo from '../assets/Logo.svg'
+import Logo from '../assets/Logo.png'
 
 export default function Navbar() {
   return (
@@ -7,7 +7,7 @@ export default function Navbar() {
       {/* Left Side: Logo & Title */}
       <div className="flex items-center">
         <div className=" p-2 rounded-lg">
-          <img src={Logo} className="p-0 m-0 border-0 bg-transparent" />
+          <img src={Logo} className="p-0  w-8 m-0 border-0 bg-transparent" />
 
         </div>
         <span className="leaderboard-title">LeaderBoard</span>

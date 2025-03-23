@@ -3,12 +3,14 @@ import Navbar from '../component/Navbar'
 import Leaderboard from '../component/Leaderboard'
 import UsersData from '../component/UsersData'
 
+
 const Home = () => {
   return (
     <div>
         <Navbar/>
         <Leaderboard/>
         <UsersData/>
+    
     </div>
   )
 }

@@ -31,35 +31,48 @@ export default function Leaderboard() {
     <div className="w-full pl-4 pr-4">
  <div className="h-[calc(100vh-160px)] overflow-y-auto ml-14 mr-14 pr-2 space-y-2 custom-scrollbar hidden sm:block">
   {usersData.map((user, index) => (
-    <div key={index} className="bg-white rounded-2xl flex flex-col">
-      {/* Top section with border */}
-      <div className={`flex border border-gray-200 rounded-2xl ${activeIndex === index ? "!border-blue-500 border-1" : ""}`}>
-        <span className="text-gray-700 font-semibold w-12 flex items-center justify-center bg-gray-100 border-l-4 border-gray-100 rounded-l-2xl">
+    <div 
+      key={index} 
+      className={`bg-white rounded-2xl flex flex-col border border-gray-200 ${
+        activeIndex === index ? "!border-blue-500 border-1" : ""
+      }`}
+    >
+      <div className="flex">
+        {/* Left Number Section */}
+        <span 
+          className={`text-gray-700 font-semibold w-12 flex items-center justify-center bg-gray-100 border-l-4 border-gray-100 rounded-l-2xl ${
+            activeIndex === index ? "h-[115px]" : "h-18"
+          }`}
+        >
           {String(index + 1).padStart(2, "0")}
         </span>
 
-        {/* Content Box */}
-        <div
-          className="flex-1 flex items-center justify-between p-4 cursor-pointer transition-all"
-          onClick={() => toggleAccordion(index)}
-        >
-          {/* Left Content */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-full">
-              <User className="w-6 h-6 text-gray-500" />
+        {/* Main Content */}
+        <div className="flex-1">
+          {/* Clickable Header */}
+          <div 
+            className="flex items-center justify-between p-4 cursor-pointer"
+            onClick={() => toggleAccordion(index)}
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-full">
+                <User className="w-6 h-6 text-gray-500" />
+              </div>
+              <span className="text-gray-900 font-medium">{user.name}</span>
             </div>
-            <span className="text-gray-900 font-medium">{user.name}</span>
+            <ChevronDown className={`w-5 h-5 transition-transform ${
+              activeIndex === index ? "rotate-180" : ""
+            }`} />
           </div>
-          
-          {/* Chevron Icon */}
-          <ChevronDown className={`w-5 h-5 transition-transform ${activeIndex === index ? "rotate-180" : ""}`} />
+
+          {/* Accordion Content */}
+          {activeIndex === index && (
+            <div className="pb-4 pl-6 pr-4 text-gray-700"> {/* Increased left padding */}
+              {user.details}
+            </div>
+          )}
         </div>
       </div>
-
-      {/* Accordion Content */}
-      {activeIndex === index && (
-        <div className="p-4 text-gray-700">{user.details}</div>
-      )}
     </div>
   ))}
 </div>

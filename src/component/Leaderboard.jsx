@@ -12,7 +12,7 @@ export default function Leaderboard() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
- 
+  const [isSortModalOpen, setIsSortModalOpen] = useState(false);
 const players = [
   { name: "Jane Smith", score: "84 3/8", rank: 1, color: "text-blue-500", svg: Verify1 },
   { name: "Alex Richard", score: "74 3/8", rank: 2, color: "text-blue-500", svg: Verify2 },
@@ -24,11 +24,11 @@ const players = [
       <div className="flex flex-wrap justify-between items-start gap-4 sm:gap-0 sm:items-center mb-2">
         <div className="flex-1 min-w-[60%]">
           {/* Live Badge (Desktop) */}
-          <span className="hidden sm:flex items-center gap-1 px-2 py-1  text-xs font-medium text-[#2B3546] border border-gray-100 rounded-full w-max ">
-  <span className="w-2 h-2 bg-[#16C172] rounded-full"></span> Live
+          <span className="hidden sm:flex items-center gap-1 px-2 py-1  text-xs font-medium text-[#2B3546] border border-[#EAECF0] rounded-full w-max ">
+  <span className="w-2 h-2 bg-[#16C172]  rounded-full"></span> Live
 </span> 
 
-          <h1 className="text-2xl font-semibold text-gray-900">Leaderboard</h1>
+          <h1 className="text-2xl font-semibold mt-3 text-gray-900">Leaderboard</h1>
           <p className="text-gray-500 text-sm mt-1">2024 Soccer sports camp</p>
         </div>
 
@@ -46,13 +46,13 @@ const players = [
   </button>
 
   {/* Sort Button */}
-  <button     onClick={() => setModalOpen(true)} className="flex items-center gap-1 px-6 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
+  <button     onClick={() => setIsSortModalOpen(true)} className="flex items-center gap-1 px-8 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
     <img src={Filters} className="w-5 h-4 text-blue-600" alt="Sort Icon" />
     Sort
   </button>
 
   {/* Share Button */}
-  <button className="flex items-center gap-1 px-6 py-2
+  <button className="flex items-center gap-1 px-8 py-2
  text-white bg-blue-600 rounded-lg hover:bg-blue-700">
     <img src={Share} className="w-5 h-4 text-white" alt="Share Icon" />
     Share   
@@ -183,25 +183,100 @@ const players = [
 
       <hr className="text-gray-300" />
       {modalOpen && (
-        <div className="fixed inset-0 bg-gray-200 bg-opacity-50 flex items-center justify-center">
-          <div className="w-[500px] h-[500px] bg-white rounded-xl shadow-xl p-6 flex flex-col">
-            {/* Title Close Button */}
-            <div className="flex justify-end">
-              <button
-                className="bg-transparent border-none text-2xl cursor-pointer hover:text-gray-600"
-                onClick={() => setModalOpen(false)}
-              >
-                X
-              </button>
-            </div>
+  <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50">
+    <div 
+      className="w-[500px] bg-white rounded-xl shadow-xl p-6 relative mx-4"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Close Button */}
+      <button
+        className="absolute top-4 right-4 text-4xl text-gray-500 hover:text-gray-700 transition-colors"
+        onClick={() => setModalOpen(false)}
+      >
+        &times;
+      </button>
 
+     
+
+      {/* Content */}
+      <h2 className="text-center text-xl font-semibold mb-6">Change Username</h2>
       
+      <div className="space-y-5">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Enter username
+          </label>
+          <input
+            type="text"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Note
+          </label>
+          <div className="px-4 py-3 bg-gray-50 text-gray-600 rounded-lg text-sm border border-gray-200">
+            Info entered here will appear publicly.
           </div>
         </div>
-      )}
+
+        <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+          Update Username
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+   {isSortModalOpen && (
+  <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50">
+    <div 
+      className="w-[500px] bg-white rounded-xl shadow-xl p-6 relative mx-4"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Close Button */}
+      <button
+        className="absolute top-4 right-4 text-4xl text-gray-500 hover:text-gray-700 transition-colors"
+        onClick={() => setIsSortModalOpen(false)}
+      >
+        &times;
+      </button>
+
+     
+
+      {/* Content */}
+      <h2 className="text-center text-lg font-semibold">Change Username</h2>
+      <div className="flex flex-col gap-3 ml- mt-3 mr-5">
+        <div className="flex flex-col gap-1">
+          {[
+            "Longest to shortest wingspan",
+            "Longest to tiniest Wingspan",
+            "Tallest person in the room",
+            "Longest wingspan in the room"
+          ].map((option, index) => (
+            <label
+              key={index}
+              className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
+            >
+              <input
+                type="radio"
+                name="sort"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                defaultChecked={index === 0}
+              />
+              <span className="text-gray-700">{option}</span>
+            </label>
+          ))}
+        </div>
+        <button className="w-full bg-blue-600 text-white py-2.5 mb-2 rounded-lg hover:bg-blue-700 transition-colors mt-2">
+          Apply
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
       {/* tweak score user */}
-
       <div className="flex flex-col items-center w-full  sm:hidden">
   <div className="relative flex flex-col items-center">
     <div className="relative flex flex-col mt-4 items-center mb-6">
@@ -226,7 +301,7 @@ const players = [
             {/* SVG Badge for Each Player */}
             <img src={player.svg} alt="Verified" className="absolute -bottom-1 -right-1 w-6 h-6" />
           </div>
-          <div className="flex justify-center items-center mt-3 gap-1 ">
+          <div className="flex justify-center items-center mt-5 gap-1 ">
             <h3 className="text-sm font-semibold text-gray-900">{player.name}</h3>
             <p className={`text-sm ${player.color} font-bold`}>( {player.score} )</p>
           </div>
