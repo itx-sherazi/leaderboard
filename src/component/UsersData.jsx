@@ -31,7 +31,7 @@ export default function Leaderboard() {
 
   return (
     <div className="w-full pl-4 pr-4">
-  <div className="h-[calc(100vh-180px)] overflow-y-auto pl-15 pr-14 space-y-4  custom-scrollbar hidden sm:block">
+  <div className="h-[calc(100vh-180px)] overflow-y-auto ml-14 mr-14 pr-2 space-y-4  custom-scrollbar hidden sm:block">
   {usersData.map((user, index) => (
     <div key={index} className={`bg-white border border-gray-200 rounded-2xl flex flex-col ${activeIndex === index ? "!border-blue-500 border-1" : ""}`}>
       {/* Top section */}
@@ -101,12 +101,12 @@ export default function Leaderboard() {
         <div className="flex-1 flex items-center justify-between p-4 cursor-pointer transition-all">
           {/* Left Side: Icon & Name */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-full">
+            <div className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full">
               <User className="w-6 h-6 text-gray-500" />
             </div>
             <div>
               <p className="text-gray-900 font-medium">{user.name}</p>
-              {user.number && <p className="text-xs text-gray-500">{user.number}</p>}
+              {user.number && <p className="text-xs mt-1 text-gray-500">{user.number}</p>}
             </div>
           </div>
 
