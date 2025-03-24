@@ -12,10 +12,6 @@ const usersData = [
   { name: "Alex Richard", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
   { name: "Alex Richard", details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
 ];
-
-
-
-
 const ranks = [
   { id: 4, name: "Jane Smith", number: "#123456", up: true },
   { id: 5, name: "Jane Smith", number: "#123456", up: false },
@@ -31,7 +27,9 @@ export default function Leaderboard() {
 
   return (
     <div className="w-full pl-4 pr-4 ">
-<div className="h-[370px] overflow-y-auto mb-10 ml-14 mr-14 pr-2 space-y-2 custom-scrollbar hidden sm:block">
+      {/* full screen user data */}
+<div className="max-h-[450px] h-auto overflow-y-auto mb-10 ml-14 mr-14 pr-2 space-y-2 custom-scrollbar hidden sm:block">
+
   {usersData.map((user, index) => (
     <div 
       key={index} 
