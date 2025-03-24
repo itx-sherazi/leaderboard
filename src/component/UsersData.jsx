@@ -31,7 +31,7 @@ export default function Leaderboard() {
 
   return (
     <div className="w-full pl-4 pr-4 ">
-<div className="h-[320px] overflow-y-auto mb-10 ml-14 mr-14 pr-2 space-y-2 custom-scrollbar hidden sm:block">
+<div className="h-[370px] overflow-y-auto mb-10 ml-14 mr-14 pr-2 space-y-2 custom-scrollbar hidden sm:block">
   {usersData.map((user, index) => (
     <div 
       key={index} 
