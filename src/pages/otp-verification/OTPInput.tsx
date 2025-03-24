@@ -34,7 +34,7 @@ const OTPInputWeb: React.FC = () => {
 
     return (
         <div className="flex justify-center items-start min-h-screen lg:pt-18 bg-gray-50 max-md:bg-white ">
-            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-[400px] mx-4 max-md:shadow-none max-md:px-4 mt-[13vh] max-md:mt-1 max-md:pl-1">
+            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-[400px] mx-4 max-md:shadow-none max-md:px-4 mt-[16vh] max-md:mt-1 max-md:pl-1">
                 <div className="flex flex-col">
                     {/* Logo Section */}
                     <div className="flex items-center gap-3 mb-8">
